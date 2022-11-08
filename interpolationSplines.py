@@ -38,6 +38,7 @@ def interpolationSplines(x, y, nb):
 
     for q in range(1, n-1):
         T[q][q-1] = h[q-1]
+    
 
     ## Construction du vecteur f
     for j in range(1, n-1):
@@ -63,18 +64,18 @@ def interpolationSplines(x, y, nb):
     print('a = ', a)
     print('b = ', b)
 
+
     ## Construction de la spline ##
     for k in range(0, n):
         
         Xp = linspace(x[k], x[k+1], nb)
-        # xp = np.append(xp, Xp)
         Yp = (m[k+1]*(((Xp - x[k])**3)/(6*h[k])) + m[k]*(((x[k+1] - Xp)**3)/(6*h[k])) + (a[k]*(Xp - x[k]))) + b[k]
         print('k = ', k)
         print('Xp = ', Xp)
         print('Yp = ', Yp)
-        if(k != 0):
-            Xp = np.delete(Xp, 0)
-            Yp = np.delete(Yp, 0)
+        # if(k != 0):
+        #     Xp = np.delete(Xp, 0)
+        #     Yp = np.delete(Yp, 0)
         xp = np.append(xp, Xp)
         yp = np.append(yp, Yp)
 
@@ -82,7 +83,3 @@ def interpolationSplines(x, y, nb):
     print('yp = ', yp)
 
     return xp, yp
-
-x1 = array([1, 2, 5, 6, 7, 8, 10, 13, 17])
-x1 = np.delete(x1, -1)
-print(x1)
