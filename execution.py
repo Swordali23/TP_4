@@ -1,11 +1,10 @@
 from interpolationSplines import interpolationSplines
-from interpolationSplines2 import interpolationSplines2
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy import nbytes, zeros,array,dot,linspace, linalg
 
 
-nb = 3
+nb = 1000
 
 ## Courbe 1 ##
 x1 = array([1, 2, 5, 6, 7, 8, 10, 13, 17])

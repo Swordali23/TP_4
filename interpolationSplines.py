@@ -70,16 +70,10 @@ def interpolationSplines(x, y, nb):
         
         Xp = linspace(x[k], x[k+1], nb)
         Yp = (m[k+1]*(((Xp - x[k])**3)/(6*h[k])) + m[k]*(((x[k+1] - Xp)**3)/(6*h[k])) + (a[k]*(Xp - x[k]))) + b[k]
-        print('k = ', k)
-        print('Xp = ', Xp)
-        print('Yp = ', Yp)
-        # if(k != 0):
-        #     Xp = np.delete(Xp, 0)
-        #     Yp = np.delete(Yp, 0)
+        if(k != 0):
+            Xp = np.delete(Xp, 0)
+            Yp = np.delete(Yp, 0)
         xp = np.append(xp, Xp)
         yp = np.append(yp, Yp)
-
-    print('xp = ', xp)
-    print('yp = ', yp)
 
     return xp, yp
